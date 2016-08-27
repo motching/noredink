@@ -1,0 +1,26 @@
+(
+ :root-dir "/usr/home/attila/Projects/noredink/motching"
+ :cache-dir "/usr/home/attila/Projects/noredink/motching/.ensime_cache"
+ :scala-compiler-jars ("/home/attila/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.11.7.jar" "/home/attila/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar" "/home/attila/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7.jar" "/home/attila/.ivy2/cache/org.scala-lang/scalap/jars/scalap-2.11.7.jar")
+ :name "root"
+ :java-home "/usr/local/openjdk8"
+ :java-flags ("-Xss2m" "-Xms1024m" "-Xmx1024m" "-XX:ReservedCodeCacheSize=128m" "-XX:MaxMetaspaceSize=256m")
+ :java-compiler-args nil
+ :reference-source-roots ("/usr/local/openjdk8/src.zip")
+ :scala-version "2.11.7"
+ :compiler-args ("-deprecation" "-feature" "-Xlint" "-Yinline-warnings" "-Yno-adapted-args" "-Ywarn-dead-code" "-Ywarn-numeric-widen" "-Xfuture" "-Ywarn-unused-import" "-Ymacro-expand:discard")
+ :formatting-prefs nil
+ :disable-source-monitoring nil
+ :disable-class-monitoring nil
+ :subprojects ((
+   :name "root"
+   :source-roots ("/usr/home/attila/Projects/noredink/motching/src/main/java" "/usr/home/attila/Projects/noredink/motching/src/test/java" "/usr/home/attila/Projects/noredink/motching/src/main/scala" "/usr/home/attila/Projects/noredink/motching/src/test/scala")
+   :targets ("/usr/home/attila/Projects/noredink/motching/target/scala-2.11/classes")
+   :test-targets ("/usr/home/attila/Projects/noredink/motching/target/scala-2.11/test-classes")
+   :depends-on-modules nil
+   :compile-deps ("/home/attila/.ivy2/cache/com.madgag/scala-arm_2.11/jars/scala-arm_2.11-1.3.3.jar" "/home/attila/.ivy2/cache/org.scala-lang.plugins/scala-continuations-library_2.11/bundles/scala-continuations-library_2.11-1.0.1.jar" "/home/attila/.ivy2/cache/com.github.scala-incubator.io/scala-io-core_2.11/jars/scala-io-core_2.11-0.4.3-1.jar" "/home/attila/.ivy2/cache/com.github.scala-incubator.io/scala-io-file_2.11/jars/scala-io-file_2.11-0.4.3-1.jar" "/home/attila/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar" "/home/attila/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar")
+   :runtime-deps nil
+   :test-deps nil
+   :doc-jars ("/usr/home/attila/Projects/noredink/motching/target/scala-2.11/noredink_2.11-0.-javadoc.jar" "/home/attila/.ivy2/cache/com.madgag/scala-arm_2.11/docs/scala-arm_2.11-1.3.3-javadoc.jar" "/home/attila/.ivy2/cache/org.scala-lang.plugins/scala-continuations-library_2.11/docs/scala-continuations-library_2.11-1.0.1-javadoc.jar" "/home/attila/.ivy2/cache/com.github.scala-incubator.io/scala-io-core_2.11/docs/scala-io-core_2.11-0.4.3-1-javadoc.jar" "/home/attila/.ivy2/cache/com.github.scala-incubator.io/scala-io-file_2.11/docs/scala-io-file_2.11-0.4.3-1-javadoc.jar" "/home/attila/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.11.7-javadoc.jar" "/home/attila/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/docs/scala-parser-combinators_2.11-1.0.1-javadoc.jar")
+   :reference-source-roots ("/home/attila/.ivy2/cache/com.madgag/scala-arm_2.11/srcs/scala-arm_2.11-1.3.3-sources.jar" "/home/attila/.ivy2/cache/org.scala-lang.plugins/scala-continuations-library_2.11/srcs/scala-continuations-library_2.11-1.0.1-sources.jar" "/home/attila/.ivy2/cache/com.github.scala-incubator.io/scala-io-core_2.11/srcs/scala-io-core_2.11-0.4.3-1-sources.jar" "/home/attila/.ivy2/cache/com.github.scala-incubator.io/scala-io-file_2.11/srcs/scala-io-file_2.11-0.4.3-1-sources.jar" "/home/attila/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.7-sources.jar" "/home/attila/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/srcs/scala-parser-combinators_2.11-1.0.1-sources.jar")))
+)

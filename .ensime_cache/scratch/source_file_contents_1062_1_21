@@ -1,0 +1,17 @@
+package object noRedInk{
+
+  def findMax(array:Array[Int], curMax:Int):Int = {
+    if (array.length = 0) {
+      return prevMax
+    }
+
+    if (array.head > prevMax) {
+
+
+
+    }
+
+  def main(args: Array[String]) :Unit={
+    println("max: " + findMax(Array(1, 4, 5, 2, 3), 0))
+  }
+}

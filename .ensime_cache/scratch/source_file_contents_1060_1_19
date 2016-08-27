@@ -1,0 +1,15 @@
+package object noRedInk{
+
+  def atoi(string:String, accu:Int):Int = {
+    if (string.length != 0) {
+      println(accu)
+      pr
+      atoi(string.tail, accu*10 + string.head)
+    }
+    accu
+    }
+
+  def main(args: Array[String]) :Unit={
+    println(atoi("1986", 0))
+  }
+}

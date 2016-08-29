@@ -1,34 +1,56 @@
 import scala.io.{StdIn, Source}
+import scala.collection.mutable.ListBuffer
 
 package object noRedInk {
 
+  def getThisStrand(questions:List[String], n: Int):List[String] = {
+    questions filter (_.split(",").toList.head.toInt == n)
+  }
+
+  def getThisStandard(questions:List[String], n: Int):List[String] = {
+   questions filter (_.split(",").toList(2).toInt == n)
+  }
+
+  def distribute(n:Int, slots:Int):List[Int] = {
+    var result = Array.fill[Int](slots)(0)
+    for (i <- Range.inclusive(1, n)) {
+      result(i%slots) += 1
+    }
+    result.toList
+  }
+
+  def getQuestionsFromStrand(questions:List[String], usage:List[Int]):ListBuffer[Int] = {
+    ListBuffer[Int]()
+  }
+
   def main(args: Array[String]): Unit = {
 
-    //val numOfQuestions:Int = StdIn.readLine("Number of wanted questions:  ").toInt
-    //println("nums: " + numOfQuestions.toString)
+    //val numOfQuestions = StdIn.readLine("Number of wanted questions:  ").toInt
+    val numOfQuestions = 5
 
     val questions = Source
       .fromURL(getClass.getClassLoader.getResource("questions.csv"))
       .getLines
       .toList
-      .tail
+      .tail //drop header line
 
-    val usage = Source
-      .fromURL(getClass.getClassLoader.getResource("usage.csv"))
-      .getLines
-      .toList
-      .tail
-
-    val lastRow = questions
+    val numOfStrands = questions
       .last
       .split(",")
-      .toList
+      .toList(0)
+      .toInt
 
-    val numOfStrands = lastRow(0).toInt
-    val numOfStandards = lastRow(2).toInt
+    //this will contain how much time to use each strand
+    val strandUsage = distribute(numOfQuestions, numOfStrands)
 
-    println("strands " + numOfStrands)
-    println("standards " + numOfStandards)
+    val questionIDs = ListBuffer[Int]()
+
+    for (i <- Range.inclusive(1, numOfStrands)) {
+      questionIDs.appendAll(getQuestionsFromStrand(questions, strandUsage))
+    }
+
+    val strandOne = getThisStrand(questions, 1)
+
 
     val t0 = System.nanoTime()
 

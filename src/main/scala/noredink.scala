@@ -19,7 +19,30 @@ package object noRedInk {
     result.toList
   }
 
-  def getQuestionsFromStrand(questions:List[String], usage:List[Int]):ListBuffer[Int] = {
+  def getQuestionsFromStrand(questions:List[String], strandUsage:List[Int], currentStrand:Int):ListBuffer[Int] = {
+
+    val result=ListBuffer[String]()
+    val questionsInStrand = getThisStrand(questions, currentStrand+1)
+    val minStandard = questionsInStrand
+      .head
+      .split(",")
+      .toList(2)
+      .toInt
+    val maxStandard = questionsInStrand
+        .last
+        .split(",")
+        .toList(2)
+        .toInt
+    val standardUsage = distribute(questionsInStrand.length, maxStandard - minStandard)
+
+    for (i <- Range.inclusive(1, strandUsage(currentStrand))){
+      val availableQuestions = getThisStandard(questionsInStrand, i)
+
+      val neededQuestions = availableQuestions.take(standardUsage(i-1))
+
+      result.appendAll(neededQuestions)
+    }
+
     ListBuffer[Int]()
   }
 
@@ -46,8 +69,11 @@ package object noRedInk {
     val questionIDs = ListBuffer[Int]()
 
     for (i <- Range.inclusive(1, numOfStrands)) {
-      questionIDs.appendAll(getQuestionsFromStrand(questions, strandUsage))
+      questionIDs.appendAll(getQuestionsFromStrand(questions, strandUsage, i-1))
     }
+
+    println("solution: ")
+    questionIDs map println
 
     val strandOne = getThisStrand(questions, 1)
 

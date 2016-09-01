@@ -105,14 +105,16 @@ package object noRedInk {
 
     val allQuestions = readCSV("questions.csv")
 
-    //val numOfQuestions = StdIn.readLine("Number of wanted questions:  ").toInt
+    val numOfQuestions = StdIn.readLine("Number of wanted questions:  ").toInt
+
+    findQuestions(allQuestions, numOfQuestions)
 
     findQuestions(allQuestions, 0)
     findQuestions(allQuestions, 2)
     findQuestions(allQuestions, 3)
     findQuestions(allQuestions, 6)
     findQuestions(allQuestions, 7)
-    findQuestions(allQuestions, 8)  // first usage of recursion
+    findQuestions(allQuestions, 8)
     findQuestions(allQuestions, 20)
   }
 }
